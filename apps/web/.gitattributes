@@ -1,0 +1,47 @@
+# .gitattributes for apps/web - consistent EOLs and binary handling
+
+# Let Git detect text files, but we force LF for our source files
+* text=auto
+
+# Force LF for common source files used in this Next.js app
+*.js     text eol=lf
+*.jsx    text eol=lf
+*.ts     text eol=lf
+*.tsx    text eol=lf
+*.json   text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.html   text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.graphql text eol=lf
+*.gql    text eol=lf
+
+# Treat SVG as text (so diffs/merges are readable). Other images/fonts are binary
+*.svg    text
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.webp   binary
+*.avif   binary
+
+# Fonts
+*.woff   binary
+*.woff2  binary
+*.eot    binary
+*.ttf    binary
+*.otf    binary
+
+# PDFs
+*.pdf    binary
+
+# Next.js build output — don't include in archives
+.next/** export-ignore
+
+# Lockfiles — mark as lock to avoid conversion surprises
+package-lock.json lock
+yarn.lock lock
+pnpm-lock.yaml lock
