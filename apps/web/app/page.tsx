@@ -1,7 +1,9 @@
 import Image, { type ImageProps } from "next/image";
-import { Button } from "@repo/ui/button";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ProductCard from "./components/ProductCard";
 import styles from "./page.module.css";
-import { z } from "zod";    
+
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
@@ -19,90 +21,41 @@ const ThemeImage = (props: Props) => {
 };
 
 export default function Home() {
+ const products = [
+  { id: 1, name: "GPT Business 1 tháng", price: "50.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 2, name: "GPT Go 3 tháng", price: "60.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 3, name: "GPT Go 1 năm", price: "120.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 4, name: "Express VPN 1 tháng", price: "20.000đ", img: "/shine/expressvpn.png", status: "Còn hàng" },
+  { id: 5, name: "Canva 1 tháng (tài khoản cấp)", price: "10.000đ", img: "/shine/canva.png", status: "Còn hàng" },
+  { id: 6, name: "Canva 1 năm", price: "90.000đ", img: "/shine/canva.png", status: "Tạm thời không có hàng" },
+  { id: 7, name: "Perplexity 1 năm (chính chủ)", price: "250.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 8, name: "Ariva Security & VPN 3 tháng", price: "60.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 9, name: "Spotify", price: "—", img: "/shine/spotify.png", status: "Tạm thời không có hàng" },
+  { id: 10, name: "Youtube", price: "—", img: "/shine/youtube.png", status: "Tạm thời không có hàng" },
+  { id: 11, name: "Figma Edu 1 năm", price: "90.000đ", img: "/shine/figma.png", status: "Tạm thời không có hàng" },
+  { id: 12, name: "Intellij 1 năm Edu", price: "90.000đ", img: "/shine/default.png", status: "Tạm thời không có hàng" },
+  { id: 13, name: "Quizlet 1 tháng", price: "9.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 14, name: "Cursor trial 7 ngày", price: "20.000đ", img: "/shine/default.png", status: "Tạm thời không có hàng" },
+  { id: 15, name: "Google AI Pro 1 tháng (AI + 2TB Drive)", price: "20.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 16, name: "Google AI Pro 1 năm (AI + 2TB Drive)", price: "160.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 17, name: "Google AI Pro 6 tháng (AI + 2TB Drive)", price: "80.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 18, name: "Dịch vụ thiết kế Website trọn gói", price: "Thương lượng", img: "/shine/default.png", status: "Cần mua lại" },
+  { id: 19, name: "Dịch vụ làm ứng dụng trọn gói", price: "Thương lượng", img: "/shine/default.png", status: "Cần mua lại" },
+];
 
 
-  const schema = z.object({
-    name: z.string(),
-  });
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <ThemeImage
-          className={styles.logo}
-          srcLight="turborepo-dark.svg"
-          srcDark="turborepo-light.svg"
-          alt="Turborepo logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>apps/web/app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <Header />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new/clone?demo-description=Learn+to+implement+a+monorepo+with+a+two+Next.js+sites+that+has+installed+three+local+packages.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4K8ZISWAzJ8X1504ca0zmC%2F0b21a1c6246add355e55816278ef54bc%2FBasic.png&demo-title=Monorepo+with+Turborepo&demo-url=https%3A%2F%2Fexamples-basic-web.vercel.sh%2F&from=templates&project-name=Monorepo+with+Turborepo&repository-name=monorepo-turborepo&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fturborepo%2Ftree%2Fmain%2Fexamples%2Fbasic&root-directory=apps%2Fdocs&skippable-integrations=1&teamSlug=vercel&utm_source=create-turbo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://turborepo.com/docs?utm_source"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-        <Button appName="web" className={styles.secondary}>
-          Open alert
-        </Button>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://turborepo.com?utm_source=create-turbo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to turborepo.com →
-        </a>
-      </footer>
+      {/* Product Grid */}
+      <div className={styles.grid}>
+        {products.map((p) => (
+          <ProductCard key={p.id} {...p} />
+        ))}
+      </div>
+
+      <Footer />  
     </div>
   );
 }
-// gay ?
