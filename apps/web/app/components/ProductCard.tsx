@@ -1,7 +1,14 @@
 import Image from "next/image";
 import styles from "../page.module.css";
 
-export default function ProductCard({ name, price, img, status }) {
+interface ProductCardProps {
+  name: string;
+  price: string | number;
+  img: string;
+  status?: string;
+}
+
+export default function ProductCard({  name, price, img, status }: ProductCardProps) {
   return (
     <div className={styles.card}>
       <Image

@@ -22,15 +22,15 @@ const ThemeImage = (props: Props) => {
 
 export default function Home() {
  const products = [
-  { id: 1, name: "GPT Business 1 tháng", price: "50.000đ", img: "/shine/default.png", status: "Còn hàng" },
-  { id: 2, name: "GPT Go 3 tháng", price: "60.000đ", img: "/shine/default.png", status: "Còn hàng" },
-  { id: 3, name: "GPT Go 1 năm", price: "120.000đ", img: "/shine/default.png", status: "Còn hàng" },
-  { id: 4, name: "Express VPN 1 tháng", price: "20.000đ", img: "/shine/expressvpn.png", status: "Còn hàng" },
-  { id: 5, name: "Canva 1 tháng (tài khoản cấp)", price: "10.000đ", img: "/shine/canva.png", status: "Còn hàng" },
-  { id: 6, name: "Canva 1 năm", price: "90.000đ", img: "/shine/canva.png", status: "Tạm thời không có hàng" },
-  { id: 7, name: "Perplexity 1 năm (chính chủ)", price: "250.000đ", img: "/shine/default.png", status: "Còn hàng" },
+  { id: 1, name: "GPT Business 1 tháng", price: "50.000đ", img: "/chatGPTGo.jpg", status: "Còn hàng" },
+  { id: 2, name: "GPT Go 3 tháng", price: "60.000đ", img: "/chatGPTGo.jpg", status: "Còn hàng" },
+  { id: 3, name: "GPT Go 1 năm", price: "120.000đ", img: "/chatGPTGo.jpg", status: "Còn hàng" },
+  { id: 4, name: "Express VPN 1 tháng", price: "20.000đ", img: "/expressVPN.png", status: "Còn hàng" },
+  { id: 5, name: "Canva 1 tháng (tài khoản cấp)", price: "10.000đ", img: "/canva.png", status: "Còn hàng" },
+  { id: 6, name: "Canva 1 năm", price: "90.000đ", img: "/canva.png", status: "Tạm thời không có hàng" },
+  { id: 7, name: "Perplexity 1 năm (chính chủ)", price: "250.000đ", img: "/perplexity.png", status: "Còn hàng" },
   { id: 8, name: "Ariva Security & VPN 3 tháng", price: "60.000đ", img: "/shine/default.png", status: "Còn hàng" },
-  { id: 9, name: "Spotify", price: "—", img: "/shine/spotify.png", status: "Tạm thời không có hàng" },
+  { id: 9, name: "Spotify", price: "—", img: "/spotify_premium.jpg", status: "Tạm thời không có hàng" },
   { id: 10, name: "Youtube", price: "—", img: "/shine/youtube.png", status: "Tạm thời không có hàng" },
   { id: 11, name: "Figma Edu 1 năm", price: "90.000đ", img: "/shine/figma.png", status: "Tạm thời không có hàng" },
   { id: 12, name: "Intellij 1 năm Edu", price: "90.000đ", img: "/shine/default.png", status: "Tạm thời không có hàng" },
